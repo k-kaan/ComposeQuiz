@@ -84,7 +84,7 @@ fun WelcomeButton(
 @Composable
 fun WelcomeLogo() {
     Image(
-        painterResource(R.drawable.ic_launcher_foreground),
+        painterResource(R.drawable.ic_baseline_question_answer),
         contentDescription = ""
     )
 }

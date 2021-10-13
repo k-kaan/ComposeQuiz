@@ -7,11 +7,37 @@
     <fragment
         android:id="@+id/welcome_fragment"
         android:name="at.kcode.guerri.ui.welcome.WelcomeFragment"
-        android:label="Welcome">
-    </fragment>
+        android:label="Welcome" />
     <fragment
         android:id="@+id/asker_fragment"
         android:name="at.kcode.guerri.ui.asker.AskerFragment"
         android:label="Asker">
+        <action android:id="@+id/finishQuiz"
+            app:destination="@+id/result_fragment">
+            <argument
+                android:name="totalQuestions"
+                app:argType="integer"
+                android:defaultValue="0" />
+
+            <argument
+                android:name="rightAnswers"
+                app:argType="integer"
+                android:defaultValue="0" />
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/result_fragment"
+        android:name="at.kcode.guerri.ui.result.ResultFragment"
+        android:label="Result">
+        <argument
+            android:name="totalQuestions"
+            app:argType="integer"
+            android:defaultValue="0" />
+
+        <argument
+            android:name="rightAnswers"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 </navigation>

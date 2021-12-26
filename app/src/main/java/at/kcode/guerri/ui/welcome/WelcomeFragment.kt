@@ -22,8 +22,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import at.kcode.guerri.WelcomeViewModel
-import at.kcode.guerri.WelcomeViewState
 import at.kcode.guerri.R
 import at.kcode.guerri.ui.theme.GuerriTheme
 
@@ -39,6 +37,8 @@ class WelcomeFragment : Fragment() {
             setContent {
                 GuerriTheme {
                     Surface(color = MaterialTheme.colors.background) {
+                        val viewState = welcomeViewModel.uiEffect().observeAsState(WelcomeViewState.Loading)
+
                         Column(
                             Modifier
                                 .fillMaxWidth()
@@ -48,9 +48,9 @@ class WelcomeFragment : Fragment() {
                         ) {
                             WelcomeLogo()
                             WelcomeButton(
-                                state = welcomeViewModel.uiEffect().observeAsState(WelcomeViewState.Loading),
+                                viewState = viewState.value,
                                 onRetry = { welcomeViewModel.loadQuestions(context) },
-                                onStart = { findNavController().navigate(R.id.asker_fragment) }
+                                onStart = { findNavController().navigate(WelcomeFragmentDirections.startQuiz()) }
                             )
                         }
                     }
@@ -63,11 +63,11 @@ class WelcomeFragment : Fragment() {
 
 @Composable
 fun WelcomeButton(
-    state: State<WelcomeViewState>,
+    viewState: WelcomeViewState,
     onRetry: () -> Unit,
     onStart: () -> Unit
 ) {
-    when (state.value) {
+    when (viewState) {
         WelcomeViewState.Loading ->
             CircularProgressIndicator()
         WelcomeViewState.Error ->
@@ -106,7 +106,7 @@ fun DefaultPreview() {
             ) {
                 WelcomeLogo()
                 WelcomeButton(
-                    state = previewButtonState,
+                    viewState = previewButtonState.value,
                     onRetry = {},
                     onStart = { }
                 )

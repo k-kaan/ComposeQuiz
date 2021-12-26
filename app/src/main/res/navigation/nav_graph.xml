@@ -4,25 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@+id/welcome_fragment">
+
     <fragment
         android:id="@+id/welcome_fragment"
         android:name="at.kcode.guerri.ui.welcome.WelcomeFragment"
-        android:label="Welcome" />
+        android:label="Welcome">
+        <action
+            android:id="@+id/startQuiz"
+            app:destination="@id/asker_fragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/asker_fragment"
         android:name="at.kcode.guerri.ui.asker.AskerFragment"
         android:label="Asker">
-        <action android:id="@+id/finishQuiz"
-            app:destination="@+id/result_fragment">
+
+        <action
+            android:id="@+id/finishQuiz"
+            app:destination="@+id/result_fragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true">
             <argument
                 android:name="totalQuestions"
-                app:argType="integer"
-                android:defaultValue="0" />
+                android:defaultValue="0"
+                app:argType="integer" />
 
             <argument
                 android:name="rightAnswers"
-                app:argType="integer"
-                android:defaultValue="0" />
+                android:defaultValue="0"
+                app:argType="integer" />
         </action>
 
     </fragment>
@@ -30,14 +41,21 @@
         android:id="@+id/result_fragment"
         android:name="at.kcode.guerri.ui.result.ResultFragment"
         android:label="Result">
+
+        <action
+            android:id="@+id/goToWelcome"
+            app:destination="@id/welcome_fragment"
+            app:popUpTo="@id/welcome_fragment"
+            app:popUpToInclusive="true" />
+
         <argument
             android:name="totalQuestions"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:defaultValue="0"
+            app:argType="integer" />
 
         <argument
             android:name="rightAnswers"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:defaultValue="0"
+            app:argType="integer" />
     </fragment>
 </navigation>

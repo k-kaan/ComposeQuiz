@@ -7,12 +7,13 @@
     <string name="asker_title_totalquestions"> von %d</string>
     <string name="welcome_button_start">Start</string>
     <string name="welcome_button_retry">Retry</string>
+    <string name="result_button_share">Share!</string>
     <string name="result_button_tryagain">Try again!</string>
-    <string name="result_score_best">Congrats, You made %d of %d!!!</string>
-    <string name="result_score_verygood">You got %d of $d. Almost perfect.</string>
-    <string name="result_score_good">Not bad. Only %d of $d questions.</string>
-    <string name="result_score_okay">Just %d of %d. You can do better…</string>
-    <string name="result_score_bad">Bad. Only %d of %d. You should try again.</string>
-    <string name="result_score_worst">You couldn\'t do worse. %d/%d!</string>
-    <string name="result_score_share">Look what I scored on %s: %d correct answers! Can you do better? %s</string>
+    <string name="result_score_best">🥳 Congrats, You made %d of %d!!!</string>
+    <string name="result_score_verygood">🤓 You got %d of $d. Almost perfect.</string>
+    <string name="result_score_good">😏 Not bad. Only %d of $d questions.</string>
+    <string name="result_score_okay">😑 Just %d of %d. You can do better…</string>
+    <string name="result_score_bad">🤐 Bad. Only %d of %d. You should try again.</string>
+    <string name="result_score_worst">😂 You couldn\'t do worse. %d/%d!</string>
+    <string name="result_score_share">Look what I scored on %s: %d correct answers! Can you do better?</string>
 </resources>

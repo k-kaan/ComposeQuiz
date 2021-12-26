@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
@@ -35,36 +37,62 @@ class ResultFragment : Fragment() {
                             Modifier
                                 .fillMaxWidth()
                                 .fillMaxHeight()
-                                .padding(Dp(16f))
+                                .padding(16.dp)
                         ) {
                             Text(
-                                text = "score",
-                                style = MaterialTheme.typography.subtitle1,
+                                text = getString(scoreTextByPercentage(), args.rightAnswers, args.totalQuestions),
+                                style = MaterialTheme.typography.h4,
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(vertical = 24.dp, horizontal = 16.dp)
                             )
-                            // "Score" klein
-                            // score text groß mit emoji
-                            // x/y klein
 
-                            // scoreboard
+                            // todo: local scoreboard - timesstamp - x/y (ranking by percentage)
 
-                            // unten horizontal: share, retry
-
-
-
-
-                            Text(text = "${args.rightAnswers}")
-                            Text(text = "${args.totalQuestions}")
-                            Spacer(modifier = Modifier.width(16.dp))
-                            Button(onClick = { findNavController().navigate(ResultFragmentDirections.goToWelcome()) }) {
-                                Text(text = stringResource(id = R.string.result_button_tryagain))
+                            Row(
+                                Modifier
+                                    .fillMaxWidth()
+                                    .padding(16.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Button(
+                                    onClick = { findNavController().navigate(ResultFragmentDirections.goToWelcome()) }) {
+                                    Text(text = stringResource(id = R.string.result_button_tryagain))
+                                }
+                                Button(
+                                    onClick = {
+                                        // todo: share
+                                        Toast.makeText(
+                                            context,
+                                            getString(
+                                                R.string.result_score_share,
+                                                getString(R.string.app_name),
+                                                args.rightAnswers
+                                            ),
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }) {
+                                    Text(text = stringResource(id = R.string.result_button_share))
+                                }
                             }
                         }
                     }
                 }
             }
+        }
+    }
+
+    @StringRes
+    private fun scoreTextByPercentage(): Int {
+        val percentage = args.rightAnswers * 100 / args.totalQuestions
+
+        return when {
+            percentage == 100 -> R.string.result_score_best
+            percentage > 80 -> R.string.result_score_verygood
+            percentage > 65 -> R.string.result_score_good
+            percentage > 50 -> R.string.result_score_okay
+            percentage > 1 -> R.string.result_score_okay
+            else -> R.string.result_score_worst
         }
     }
 }

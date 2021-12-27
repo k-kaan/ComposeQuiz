@@ -6,10 +6,12 @@ This is a simple quiz in Material Design by Jetpack Compose as a Sample Android 
 
 The app has a welcome screen for loading the questions from the repository and starting the quiz. After starting the quiz, the app jumps to the questions view with single-choice questions. The quiz ends with a stateless results screen, showing just the score for now.
 
+![screenshot_question.png](screenshots/screenshot_question.png)
+![screenshot_questiontwo.png](screenshots/screenshot_questiontwo.png)
+
 ToBeDone
 - Score sharing
 - Scoreboard
 - UI improvements
 
-
-See also [my post on Medium link](https://kkaan.medium.com/dive-into-jetpack-compose-building-a-quiz-f9d880d1da11) about this project ✍️
+See also [my post on Medium](https://kkaan.medium.com/dive-into-jetpack-compose-building-a-quiz-f9d880d1da11) about this project ✍️

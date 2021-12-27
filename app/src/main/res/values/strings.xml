@@ -4,7 +4,7 @@
     <string name="asker_nav_next">Next</string>
     <string name="asker_nav_back">Back</string>
     <string name="asker_nav_finish">Finish</string>
-    <string name="asker_title_totalquestions"> von %d</string>
+    <string name="asker_title_totalquestions"> of %d</string>
     <string name="welcome_button_start">Start</string>
     <string name="welcome_button_retry">Retry</string>
     <string name="result_button_share">Share!</string>

@@ -1,70 +1,70 @@
 {
   "questions": [
     {
-      "question": "question 1",
+      "question": "When was Jetpack Compose introduced?",
       "answers": [
         {
           "id": "a",
-          "text": "answer 1"
+          "text": "2018"
         },
         {
           "id": "b",
-          "text": "answer 1"
+          "text": "2019"
         },
         {
           "id": "c",
-          "text": "answer 1"
+          "text": "2020"
         },
         {
           "id": "d",
-          "text": "answer 1"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "question": "question 2",
-      "answers": [
-        {
-          "id": "a",
-          "text": "answer 1"
-        },
-        {
-          "id": "b",
-          "text": "answer 1"
-        },
-        {
-          "id": "c",
-          "text": "answer 1"
-        },
-        {
-          "id": "d",
-          "text": "answer 1"
+          "text": "2021"
         }
       ],
       "correctAnswerId": "b"
     },
     {
-      "question": "question 3",
+      "question": "What happens when the input of a composable function changes?",
       "answers": [
         {
           "id": "a",
-          "text": "answer 1"
+          "text": "ANR - the UI thread is blocked"
         },
         {
           "id": "b",
-          "text": "answer 1"
+          "text": "Nothing, until you call notifyDataSetChanged()"
         },
         {
           "id": "c",
-          "text": "answer 1"
+          "text": "Recomposition - The function will be called again"
         },
         {
           "id": "d",
-          "text": "answer 1"
+          "text": "A crash occurs."
         }
       ],
       "correctAnswerId": "c"
+    },
+    {
+      "question": "Which coroutines scope can you use for the composable's lifecycle?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "GlobalScope"
+        },
+        {
+          "id": "b",
+          "text": "ViewModelScope"
+        },
+        {
+          "id": "c",
+          "text": "LifecycleScope"
+        },
+        {
+          "id": "d",
+          "text": "rememberCoroutineScope()"
+        }
+      ],
+      "correctAnswerId": "d"
     }
   ]
 }

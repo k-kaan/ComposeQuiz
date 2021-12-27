@@ -173,10 +173,12 @@ private fun SingleChoiceQuestion(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(
+                        modifier = Modifier.weight(4f),
                         text = answer.text
                     )
 
                     RadioButton(
+                        modifier = Modifier.weight(1f),
                         selected = optionSelected,
                         onClick = onClickHandle,
                         colors = RadioButtonDefaults.colors(

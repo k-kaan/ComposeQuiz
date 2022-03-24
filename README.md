@@ -15,4 +15,4 @@ ToBeDone
 - Scoreboard
 - UI improvements
 
-See also [my post on Medium](https://kkaan.medium.com/dive-into-jetpack-compose-building-a-quiz-f9d880d1da11) about this project ✍️
+See also [my post on Medium](https://kkaan.medium.com/dive-into-jetpack-compose-building-a-quiz-f9d880d1da11?source=friends_link&sk=be93138805be5015a5f7c2c02cc52b8b) about this project ✍️
